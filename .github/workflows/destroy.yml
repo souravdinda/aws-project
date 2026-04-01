@@ -35,9 +35,7 @@ jobs:
           terraform_version: "1.10.5"
 
       - name: Terraform Init
-        working-directory: ${{ env.TF_WORKING_DIR }}
         run: terraform init
 
       - name: Terraform Destroy
-        working-directory: ${{ env.TF_WORKING_DIR }}
         run: terraform destroy -auto-approve
