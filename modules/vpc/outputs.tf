@@ -13,3 +13,6 @@ output "public_subnets" {
 output "nat_ips" {
   value = module.vpc.nat_public_ips
 }
+output "vpc_id" {
+  value = module.vpc.vpc_id
+}
