@@ -40,3 +40,31 @@ variable "enable_vpn_gateway" {
 variable "tags" {
   type = map(string)
 }
+
+
+#####################Sgroup Variables#####################
+variable "sg_name" {
+  type = string
+}
+
+variable "sg_description" {
+  type = string
+}
+
+variable "sg_ingress_rules" {
+  type = list(object({
+    from_port = number
+    to_port   = number
+    protocol  = string
+    cidr_ipv4 = optional(string)
+    cidr_ipv6 = optional(string)
+  }))
+}
+
+variable "sg_egress_rules" {
+  type = list(object({
+    protocol  = string
+    cidr_ipv4 = optional(string)
+    cidr_ipv6 = optional(string)
+  }))
+}

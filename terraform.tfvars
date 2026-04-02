@@ -28,3 +28,32 @@ tags = {
   Terraform   = "true"
   Environment = "dev"
 }
+
+
+##########################secutity group##########################
+
+
+sg_name        = "my_sg"
+sg_description = "Allow TLS inbound traffic"
+
+sg_ingress_rules = [
+  {
+    from_port = 443
+    to_port   = 443
+    protocol  = "tcp"
+    cidr_ipv4 = "0.0.0.0/0"
+  },
+  {
+    from_port = 80
+    to_port   = 80
+    protocol  = "tcp"
+    cidr_ipv4 = "0.0.0.0/0"
+  }
+]
+
+sg_egress_rules = [
+  {
+    protocol  = "-1"
+    cidr_ipv4 = "0.0.0.0/0"
+  }
+]

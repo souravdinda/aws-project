@@ -28,3 +28,5 @@ output "public_subnets" {
 output "nat_ips" {
   value = module.vpc.nat_ips
 }
+
+
